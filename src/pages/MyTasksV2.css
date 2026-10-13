@@ -1,0 +1,397 @@
+.tasks-v2-page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-bottom: 40px;
+}
+
+.tasks-v2-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tasks-v2-title {
+  font-size: 26px;
+  font-weight: 800;
+  font-family: var(--font-display);
+}
+
+.tasks-v2-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.kbd-shortcut {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+/* Stat cards */
+.tasks-v2-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.tv2-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 16px 20px;
+  gap: 12px;
+  transition: all var(--transition-fast);
+}
+
+.tv2-stat:hover { border-color: var(--border-default); box-shadow: var(--shadow-card); }
+.tv2-stat-danger { border-left: 3px solid var(--risk-high); }
+.tv2-stat-warning { border-left: 3px solid var(--risk-medium); }
+.tv2-stat-success { border-left: 3px solid var(--risk-low); }
+
+.tv2-stat-body { display: flex; flex-direction: column; gap: 3px; }
+
+.tv2-stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.tv2-stat-value {
+  font-size: 26px;
+  font-weight: 800;
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.tv2-stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Controls */
+.tasks-v2-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.tv2-tabs {
+  display: flex;
+  gap: 2px;
+}
+
+.tv2-tab {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-sans);
+  white-space: nowrap;
+}
+
+.tv2-tab.active,
+.tv2-tab:hover {
+  background: var(--brand-glow);
+  color: var(--text-brand);
+  border-color: var(--border-brand);
+}
+
+.tv2-search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  padding: 0 10px;
+  height: 34px;
+}
+
+.tv2-search-icon { color: var(--text-muted); flex-shrink: 0; }
+
+.tv2-search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-family: var(--font-sans);
+}
+
+.tv2-search-input::placeholder { color: var(--text-muted); }
+
+.tv2-search-hint {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg-hover);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 2px 5px;
+  flex-shrink: 0;
+}
+
+.tv2-view-btns {
+  display: flex;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tv2-view-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tv2-view-btn.active,
+.tv2-view-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* Filter row */
+.tv2-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tv2-select-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+/* Table */
+.tv2-table {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.tv2-table-head {
+  display: grid;
+  grid-template-columns: 24px 20px 1fr 150px 160px 200px 110px;
+  gap: 12px;
+  padding: 10px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-subtle);
+  align-items: center;
+  background: var(--bg-elevated);
+}
+
+.tv2-row {
+  display: grid;
+  grid-template-columns: 24px 20px 1fr 150px 160px 200px 110px;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  align-items: center;
+  transition: all var(--transition-fast);
+}
+
+.tv2-row:last-child { border-bottom: none; }
+.tv2-row:hover { background: var(--bg-elevated); }
+
+.tv2-row.tv2-row-overdue { border-left: 3px solid var(--risk-high); }
+.tv2-row.tv2-row-done { opacity: 0.5; }
+.tv2-row.tv2-row-done .tv2-task-name { text-decoration: line-through; color: var(--text-muted); }
+
+.tv2-star-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.tv2-star-btn:hover { opacity: 1; }
+
+.tv2-task-info { min-width: 0; }
+
+.tv2-task-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.tv2-task-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.tv2-due-alert {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-bottom: 5px;
+}
+
+.tv2-due-overdue {
+  background: var(--risk-high-bg);
+  color: var(--risk-high);
+}
+
+.tv2-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+
+.tv2-tag {
+  font-size: 10px;
+  color: var(--brand-primary-light);
+  font-weight: 500;
+  padding: 1px 0;
+}
+
+.tv2-assignee {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg-hover);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+/* Due cell */
+.tv2-due-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tv2-due-time {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.text-danger { color: var(--risk-high) !important; }
+.text-warning { color: var(--risk-medium) !important; }
+
+.tv2-schedule-note {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* Priority + status */
+.tv2-priority-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tv2-status {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.tv2-status-pending { color: var(--text-secondary); }
+.tv2-status-progress { color: var(--brand-primary-light); }
+.tv2-status-scheduled { color: var(--risk-low); }
+.tv2-status-queued { color: var(--text-muted); }
+.tv2-status-routine { color: var(--risk-low); }
+.tv2-status-blocked { color: var(--risk-high); }
+
+/* Risk cell */
+.tv2-risk-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tv2-risk-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.tv2-risk-high { background: var(--risk-high-bg); color: var(--risk-high); }
+.tv2-risk-medium { background: var(--risk-medium-bg); color: var(--risk-medium); }
+.tv2-risk-low { background: var(--risk-low-bg); color: var(--risk-low); }
+.tv2-risk-health { background: rgba(6,182,212,0.1); color: var(--text-accent); }
+
+.tv2-risk-reason {
+  font-size: 10px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+/* Actions */
+.tv2-actions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+/* Priority badge variants */
+.badge-urgent { background: var(--risk-high-bg); color: var(--risk-high); border-color: rgba(239,68,68,0.25); }
